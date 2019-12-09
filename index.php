@@ -5,6 +5,14 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 </head>
 
+<script type="text/javascript">
+  function submitForm(action) {
+    var form = document.getElementById('form1');
+    form.action = action;
+    form.submit();
+  }
+</script>
+
 <body>
   <?php
   session_start();
@@ -30,10 +38,11 @@
     <?php
   } else {
     ?>
-      <form class="form-inline" action="lib/login.php" method="post">
+      <form class="form-inline" id="form1" method="post">
         <input class="form-control mr-sm-2" type="text" placeholder="Username" name="username">
-        <input class="form-control mr-sm-2" type="password" placeholder="Passwort" name="password">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+        <input class="form-control mr-sm-2" type="password" placeholder="Password" name="password">
+        <button class="btn btn-outline-success my-2 my-sm-0" onclick="submitForm('lib/login.php')" type="submit">Login</button>
+        <button class="btn btn-danger my-2 my-sm-0" onclick="submitForm('lib/register.php')" type="submit">Register</button>
       </form>
     <?php
   }
