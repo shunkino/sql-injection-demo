@@ -1,12 +1,12 @@
-
   <?php
   session_start();
   require_once('helpers.php');
   
-  if (logged_in()) {
-    header('Location: ../index.php');
-    exit;    
-  }
+
+  // if (logged_in()) {
+  //   header('Location: ../index.php');
+  //   exit;    
+  // }
   
   $name = $_POST['username'];
   $password = $_POST['password'];

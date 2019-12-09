@@ -41,8 +41,8 @@
       <form class="form-inline" id="form1" method="post">
         <input class="form-control mr-sm-2" type="text" placeholder="Username" name="username">
         <input class="form-control mr-sm-2" type="password" placeholder="Password" name="password">
-        <button class="btn btn-outline-success my-2 my-sm-0" onclick="submitForm('lib/login.php')" type="submit">Login</button>
-        <button class="btn btn-danger my-2 my-sm-0" onclick="submitForm('lib/register.php')" type="submit">Register</button>
+        <button class="btn btn-outline-success my-2 my-sm-0" onclick="submitForm('lib/login.php')">Login</button>
+        <button class="btn btn-danger my-2 my-sm-0" onclick="submitForm('lib/register.php')">Register</button>
       </form>
     <?php
   }
