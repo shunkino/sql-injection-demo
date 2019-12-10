@@ -10,7 +10,8 @@
   
   $name = $_POST['username'];
   $password = $_POST['password'];
-  $query = "SELECT * FROM users WHERE name='$name' AND password='$password';";
+  $hased_password = hash('sha256', $password);
+  $query = "SELECT * FROM users WHERE name='$name' AND password='$hased_password.PHP_EOL';";
   
   require_once('connectdb.php');
   $db = connectdb();

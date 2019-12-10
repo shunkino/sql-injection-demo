@@ -11,9 +11,10 @@
   $name = $_POST['username'];
   $email = $_POST['email'];
   $password = $_POST['password'];
+  $hashed_password = hash('sha256', $password);
 
   # $query = "CREATE * FROM users WHERE name='$name' AND password='$password';";
-  $query = "INSERT INTO `inject_demodb`.`users` (`name`, `email`, `password`, `role`) VALUES ('$name', '$email', '$password', 'consumer');";
+  $query = "INSERT INTO `inject_demodb`.`users` (`name`, `email`, `password`, `role`) VALUES ('$name', '$email', '$hashed_password.PHP_EOL', 'consumer');";
 
   require_once('connectdb.php');
   $db = connectdb();
