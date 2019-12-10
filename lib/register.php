@@ -21,6 +21,9 @@
   if ($result) {
     $result = mysqli_use_result($db);
   }
+  if (!isset($_SESSION['reg_success'])) {
+    $_SESSION['reg_success'] = true;
+  }
   mysqli_close($db);
 
 

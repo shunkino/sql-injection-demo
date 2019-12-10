@@ -56,8 +56,15 @@
       Login Failed. Username or Password is wrong.
     </div>
   <?php
-}
-?>
+  } elseif (isset($_SESSION['reg_success'])) {
+    unset($_SESSION['reg_success']);
+    ?>
+    <div class="alert" role="alert">
+      Successfully registered!! Buy coffe now!! ☕
+    </div>
+  <?php
+  }
+  ?>
   <h1>Onlineshop Coffee</h1>
   <form action="index.php" method="get">
     <div class="form-group">
